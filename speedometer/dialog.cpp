@@ -11,6 +11,8 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+    port = NULL;
+    Conectar_puerto();
     ui->meterWidget->setForeground(Qt::white);
     connect(ui->pushButtonConectar,SIGNAL(released()),this,SLOT(on_pushButtonConectar_clicked()));
     connect(ui->pushButtonEnviar,SIGNAL(released()),this,SLOT(on_pushButtonEnviar_clicked()));
